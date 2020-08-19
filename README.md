@@ -6,3 +6,4 @@ The following image demonstrates the application functionality:
 ![weather-api-project-demo](./Assets/weather-api-project.png)
 
 The following URL navigates to the deployed application.
+https://teastman201.github.io/Weather-Api-Project/
