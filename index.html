@@ -15,29 +15,20 @@
 
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
-    var city = "New York";
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=742e68c932f3e4e2f733f5a8c104a762";
-
-    // Performing GET requests to the Open Weather API and logging the responses to the console
-    $.ajax({
-      city,
-      method: "GET"
-    }).then(function (response) {
-      console.log(response);
-    });    
-  </script>
+  
 
   <header class="jumbotron">
     <h1 class="display-3">Weather Dashboard</h1>
   </header>
-  <div class="container">
-    <div class="form-group">
-      <p>Search for a City:
-        <input type=text>
-        <button>Button</button>
-      </p>
-    </div>
+  <div class="container">    
+    <form id="city-form">
+      <label for="city-input">Search for a City</label>
+      <input type="text" id="city-input"><br>
+      <!-- This button will trigger an AJAX call -->
+      <!-- Add search icon to button and reduce width of button -->
+      <!-- <input id="find-city" type="submit" value="">  -->
+      <button type='button' id='find-city' ></button>
+    </form>
     <ul class="list-group">
       <li class="list-group-item">City1</li>
       <li class="list-group-item">City2</li>
