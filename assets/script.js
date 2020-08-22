@@ -1,17 +1,27 @@
-// // var city = "New York";
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=742e68c932f3e4e2f733f5a8c104a762";
+var curDay = moment().format(' L ');  
 
-// Performing GET requests to the Open Weather API and logging the responses to the console
-$.ajax({
-    queryURL,
-    method: "GET"
-}).then(function (response) {
-    console.log(response);
-});
-var city = $("#city-input").val();
+// Adds 1 day to the calendar.
+// moment().add(1, 'days').format(' L ');  
 
-$("#find-city").on("click", function () {
+var city = "New York ";
+   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=742e68c932f3e4e2f733f5a8c104a762";
+   // Performing GET requests to the Open Weather API and logging the responses to the console
+   $.ajax({
+     url: queryURL,
+     method: "GET"
+   }).then(function (response) {
+    
+    var iconCode = response.weather[0].icon;
+    var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
+    $("#wicon").attr('src', iconURL);     
+     $(".card-title-area").text(response.name + curDay);
+     $(".card-text-temp").text("Temperature: " + response.main.temp);
+     $(".card-text-wind").text("Windspeed: " + response.wind.speed);
+     $(".card-text-hum").text("Humidity: " + response.main.humidity);
+     
+     // Code for UV-index
+    
+   });
 
-    console.log('hello');
+   
 
-});

@@ -15,68 +15,72 @@
 
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  
+
 
   <header class="jumbotron">
     <h1 class="display-3">Weather Dashboard</h1>
   </header>
-  <div class="container">    
+  <div class="container">
     <form id="city-form">
       <label for="city-input">Search for a City</label>
       <input type="text" id="city-input"><br>
       <!-- This button will trigger an AJAX call -->
       <!-- Add search icon to button and reduce width of button -->
       <!-- <input id="find-city" type="submit" value="">  -->
-      <button type='button' id='find-city' ></button>
+      <button type='button' id='find-city'></button>
     </form>
     <ul class="list-group">
-      <li class="list-group-item">City1</li>
-      <li class="list-group-item">City2</li>
-      <li class="list-group-item">City3</li>
-      <li class="list-group-item">City4</li>
-      <li class="list-group-item">City5</li>
-      <li class="list-group-item">City6</li>
-      <li class="list-group-item">City7</li>
-      <li class="list-group-item">City8</li>
+      <!-- change list group class to less specific and use html element selectors for list items -->
+      <li class="list-group-city1">City1</li>
+      <li class="list-group-city2">City2</li>
+      <li class="list-group-city3">City3</li>
+      <li class="list-group-city4">City4</li>
+      <li class="list-group-city5">City5</li>
+      <li class="list-group-city6">City6</li>
+      <li class="list-group-city7">City7</li>
+      <li class="list-group-city8">City8</li>
     </ul>
 
     <div class="card">
-      <h4 class="card-title">City & Date & Weather Icon</h4>
+      <div id="title-area">
+        <h4 class="card-title-area"></h4>
+        <img id="wicon" src="" alt="Weather icon">
+      </div>
       <div class="card-body">
-        <p class="card-text">Temperature:</p>
-        <p class="card-text">Windspeed:</p>
-        <p class="card-text">Humidity:</p>
-        <p class="card-text">UV Index:</p>
+        <p class="card-text-temp"></p>
+        <p class="card-text-wind"></p>
+        <p class="card-text-hum"></p>
+        <p class="card-text-uv">UV Index:</p>
       </div>
     </div>
 
     <div class="card">
       <div class="card header">
-        5-Day Forecast:
+        4-Day Forecast:
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">date</li>
-        <li class="list-group-item">weather icon</li>
-        <li class="list-group-item">temp:</li>
-        <li class="list-group-item">humidity:</li>
+        <li class="list-group-item-date">date</li>
+        <li class="list-group-item-icon">weather icon</li>
+        <li class="list-group-item-temp">temp:</li>
+        <li class="list-group-item-hum">humidity:</li>
       </ul>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">date</li>
-        <li class="list-group-item">weather icon</li>
-        <li class="list-group-item">temp:</li>
-        <li class="list-group-item">humidity:</li>
+        <li class="list-group-item-date">date</li>
+        <li class="list-group-item-icon">weather icon</li>
+        <li class="list-group-item-temp">temp:</li>
+        <li class="list-group-item-hum">humidity:</li>
       </ul>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">date</li>
-        <li class="list-group-item">weather icon</li>
-        <li class="list-group-item">temp:</li>
-        <li class="list-group-item">humidity:</li>
+        <li class="list-group-item-date">date</li>
+        <li class="list-group-item-icon">weather icon</li>
+        <li class="list-group-item-temp">temp:</li>
+        <li class="list-group-item-hum">humidity:</li>
       </ul>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">date</li>
-        <li class="list-group-item">weather icon</li>
-        <li class="list-group-item">temp:</li>
-        <li class="list-group-item">humidity:</li>
+        <li class="list-group-item-date">date</li>
+        <li class="list-group-item-icon">weather icon</li>
+        <li class="list-group-item-temp">temp:</li>
+        <li class="list-group-item-hum">humidity:</li>
       </ul>
     </div>
 
@@ -85,7 +89,8 @@
 
 
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./assets/script.js"></script>
 </body>
 
