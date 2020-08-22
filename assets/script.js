@@ -11,17 +11,25 @@ var city = "New York ";
      method: "GET"
    }).then(function (response) {
     
+    // Populates current day area
+    var temp = response.main.temp
+    var tempFah =  ((temp-273.15)*1.8)+32;
     var iconCode = response.weather[0].icon;
     var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
     $("#wicon").attr('src', iconURL);     
      $(".card-title-area").text(response.name + curDay);
-     $(".card-text-temp").text("Temperature: " + response.main.temp);
+     $(".card-text-temp").text("Temperature: " + tempFahgu);
      $(".card-text-wind").text("Windspeed: " + response.wind.speed);
      $(".card-text-hum").text("Humidity: " + response.main.humidity);
-     
+
      // Code for UV-index
+
+     // Populates four day area
+
     
    });
+
+
 
    
 
