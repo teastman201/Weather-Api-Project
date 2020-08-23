@@ -42,26 +42,28 @@ var queryUrlMulti = "https://api.openweathermap.org/data/2.5/forecast?q=" + city
 
 
   // var lDate = $("<li>").addClass("list-group-item-date");
-  var lDate = $("<li>");
-  var lIcon = $("<li>").addClass("list-group-item-icon");
-  var lTemp = $("<li>").addClass("list-group-item-temp");
-  var lHum = $("<li>").addClass("list-group-item-hum");
+  
+  
 
 for (t = 1; t < 6; t++) {
   var uList = $("<ul>").addClass("list-group list-group-flush");
+  var lDate = $("<li>").addClass("list-group-item-date");
+  var lIcon = $("<li>").addClass("list-group-item-icon");
+  var lTemp = $("<li>").addClass("list-group-item-temp");
+  var lHum = $("<li>").addClass("list-group-item-hum");
   uList.text("Day " + t);
-  lDate.text("date");
+  lDate.text("date " + t);
   lIcon.text("icon here");
   lTemp.text("temp");
   lHum.text("Humidity");
   $(".card-header").append(uList);
-  $(".list-group").append(lDate);
-  // $(".list-group").append(lIcon);
-  // $(".list-group").append(lTemp);
-  // $(".list-group").append(lHum);
+  $(uList).append(lDate);
+  $(uList).append(lIcon);
+  $(uList).append(lTemp);
+  $(uList).append(lHum);
 }
 
-// $(".list-group").append(".card-header");
+// $(uList).append(".card-header");
 
 
 $.ajax({
