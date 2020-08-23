@@ -29,7 +29,7 @@ $.ajax({
   var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
   $("#wicon").attr("src", iconURL);
   $(".card-title-area").text(response.name + curDay);
-  $(".card-text-temp").text("Temperature: " + tempFah);
+  $(".card-text-temp").text("Temperature: " + tempFah.toFixed(0));
   $(".card-text-wind").text("Windspeed: " + response.wind.speed);
   $(".card-text-hum").text("Humidity: " + response.main.humidity);
 
@@ -122,7 +122,7 @@ $.ajax({
     // uList.text(multiDate);
     lDate.text(multiDate);
     lIcon.attr("src", iconURLMulti);
-    lTemp.text("Temp: " + tempMulti);
+    lTemp.text("Temp: " + tempMulti.toFixed(0));
     lHum.text("Humidty: " + humidMulti);    
     $(".card-header").append(uList); 
     $(uList).append(lDate); 
