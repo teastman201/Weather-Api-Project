@@ -39,15 +39,19 @@ var listGroupCity = $(".list-group-city");
 console.log(newArrayOfKeys);
 
 
-
+var listCity = $('.list-city');
 
 for (h = 0; h < newArrayOfKeys.length; h++) {
 
-  listGroupCity.append(`<button type="button" class="list-city list-group-city"${h+1}>${newArrayOfKeys[h]}</button>`);
+  listGroupCity.append(`<button type="button" class="list-city"${h+1}>${newArrayOfKeys[h]}</button>`);
+  listCity.addClass('list-group-city' + [h]);
   // $(".list-group-city").append("<li>");
   // $("<li>").addClass("list-group-city" + [h]);
   // $("<ul>").addClass("list-group list-group-flush" + [i]);
 }
+
+// var uList = $("<ul>").addClass("list-group list-group-flush" + [i]);
+
 // newCity = ;
 
 //  function last(newArrayOfKeys) {
@@ -119,6 +123,11 @@ $.ajax({
     $(uList).append(lHum);
 
   }
+
+});
+
+$('.list-city').click(function () {
+  console.log("was clicked");
 
 });
 // function showBtn(){
