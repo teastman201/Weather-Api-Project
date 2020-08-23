@@ -95,6 +95,8 @@ $.ajax({
     // $(".list-group-item-date").text(m);   
   }
   
+  var x = 0;
+
   for (i = 7; i < arrayOfDays.length; i += 8) {
   //   var iconMulti = responseMulti.weather[0].icon;
   var iconMulti = responseMulti.list[i].weather[0].icon;
@@ -102,11 +104,12 @@ $.ajax({
 
   // $("#wicon").attr("src", iconURLMulti);
   console.log(responseMulti.list[i]);
- var x;
-  x += 1;
   
  
+  x += 1;
   var multiDate = moment().add(x, "days").format(" L "); 
+ 
+  
     // var groupDate = $("list-group-item-date");
     var tempMulti = ((responseMulti.list[i].main.temp - 273.15) * 1.8) + 32;
     var humidMulti = responseMulti.list[i].main.humidity;
@@ -119,8 +122,8 @@ $.ajax({
     // uList.text(multiDate);
     lDate.text(multiDate);
     lIcon.attr("src", iconURLMulti);
-    lTemp.text(tempMulti);
-    lHum.text(humidMulti);    
+    lTemp.text("Temp: " + tempMulti);
+    lHum.text("Humidty: " + humidMulti);    
     $(".card-header").append(uList); 
     $(uList).append(lDate); 
     $(uList).append(lIcon);
