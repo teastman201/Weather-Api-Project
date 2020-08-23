@@ -42,25 +42,35 @@ var queryUrlMulti = "https://api.openweathermap.org/data/2.5/forecast?q=" + city
 
 
   // var lDate = $("<li>").addClass("list-group-item-date");
-  
-  
+ 
+  // var uList = $("<ul>").addClass("list-group list-group-flush");
 
 for (t = 1; t < 6; t++) {
+  
   var uList = $("<ul>").addClass("list-group list-group-flush");
   var lDate = $("<li>").addClass("list-group-item-date");
   var lIcon = $("<li>").addClass("list-group-item-icon");
   var lTemp = $("<li>").addClass("list-group-item-temp");
   var lHum = $("<li>").addClass("list-group-item-hum");
-  uList.text("Day " + t);
-  lDate.text("date " + t);
+  // uList.text(multiDate);
+  // lDate.text("date " + m);
   lIcon.text("icon here");
   lTemp.text("temp");
   lHum.text("Humidity");
-  $(".card-header").append(uList);
-  $(uList).append(lDate);
+  $(".card-header").append(uList); 
+  $(uList).append(lDate); 
   $(uList).append(lIcon);
   $(uList).append(lTemp);
   $(uList).append(lHum);
+}
+
+for (m = 1; m < 6; m++) {  
+  
+  var multiDate = moment().add(m, "days").format(" L "); 
+  $(".list-group-item-date").text(multiDate);
+  // $(uList).prepend(lDate);
+  // console.log(multiDate);
+  // $(".list-group-item-date").text(m);   
 }
 
 // $(uList).append(".card-header");
@@ -80,11 +90,8 @@ $.ajax({
   //   // arrayOfDays += arrayOfDays[i];
   //   console.log(Date(arrayOfDays[i].dt));
   // }
-  // var m;
-  for (m = 1; m < 6; m++) {
-    console.log(moment().add(m, "days").format(" L "));
-    $(".list-group-item-date").text(m);
-  }
+  
+  
 
   // console.log(responseMulti);
   // var i;
@@ -96,9 +103,9 @@ $.ajax({
 
     // console.log(responseMulti.list[i].main.temp);
 
-    console.log(tempMulti.toFixed(2));
-    console.log(humidMulti);
-    console.log(windMulti);
+    // console.log(tempMulti.toFixed(2));
+    // console.log(humidMulti);
+    // console.log(windMulti);
 
 
   }
