@@ -18,18 +18,35 @@ var curDay = moment().format(" L ");
 // localStorage.setItem('city6', JSON.stringify(''));
 // localStorage.setItem('city7', JSON.stringify(''));
 // localStorage.setItem('city8', JSON.stringify(''));
-retrievedData = localStorage.getItem("city", "value");
+retrievedData = localStorage.getItem("city");
 var retrievedKeys = JSON.parse(retrievedData);
-// console.log(retrievedData);
+console.log(retrievedData);
 var arrayOfKeys = [];
-$(".list-group-city1").text(retrievedKeys[0]);
-$(".list-group-city2").text(retrievedKeys[1]);
-$(".list-group-city3").text(retrievedKeys[2]);
-$(".list-group-city4").text(retrievedKeys[3]);
-$(".list-group-city5").text(retrievedKeys[4]);
-$(".list-group-city6").text(retrievedKeys[5]);
-$(".list-group-city7").text(retrievedKeys[6]);
-$(".list-group-city8").text(retrievedKeys[7]);
+
+
+// function showBtn(){
+  
+//   arrayOfKeys=JSON.parse(localStorage.getItem('city'))
+
+
+//   console.log(arrayOfKeys);
+
+//   for(var i=0; i<arrayOfKeys.length;i++){
+// console.log(i,arrayOfKeys[i])
+
+//     $("#list-group-city").append(`<li class="list-city list-group-city"${i+1}>${arrayOfKeys[i]}</li>`);
+//   }
+
+// }
+// showBtn()
+// $(".list-group-city1").text(retrievedKeys[0]);
+// $(".list-group-city2").text(retrievedKeys[1]);
+// $(".list-group-city3").text(retrievedKeys[2]);
+// $(".list-group-city4").text(retrievedKeys[3]);
+// $(".list-group-city5").text(retrievedKeys[4]);
+// $(".list-group-city6").text(retrievedKeys[5]);
+// $(".list-group-city7").text(retrievedKeys[6]);
+// $(".list-group-city8").text(retrievedKeys[7]);
 
 
 
@@ -37,6 +54,18 @@ $(".list-group-city8").text(retrievedKeys[7]);
 // Performing GET requests to the Open Weather API and logging the responses to the console
 
 $('button').click(function () {
+  
+  // $(".list-group-city1").text(retrievedKeys[0]);
+  //   $(".list-group-city2").text(retrievedKeys[1]);
+  //   $(".list-group-city3").text(retrievedKeys[2]);
+  //   $(".list-group-city4").text(retrievedKeys[3]);
+  //   $(".list-group-city5").text(retrievedKeys[4]);
+  //   $(".list-group-city6").text(retrievedKeys[5]);
+  //   $(".list-group-city7").text(retrievedKeys[6]);
+  //   $(".list-group-city8").text(retrievedKeys[7]);
+
+  
+
   var city = $("input").val();
   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=742e68c932f3e4e2f733f5a8c104a762";
   var queryUrlMulti = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=742e68c932f3e4e2f733f5a8c104a762";
@@ -49,14 +78,6 @@ $('button').click(function () {
   }
 
   // console.log(city);
-  $(".list-group-city1").text(retrievedKeys[0]);
-$(".list-group-city2").text(retrievedKeys[1]);
-$(".list-group-city3").text(retrievedKeys[2]);
-$(".list-group-city4").text(retrievedKeys[3]);
-$(".list-group-city5").text(retrievedKeys[4]);
-$(".list-group-city6").text(retrievedKeys[5]);
-$(".list-group-city7").text(retrievedKeys[6]);
-$(".list-group-city8").text(retrievedKeys[7]);
 
   city = $("input").val();
 
@@ -82,6 +103,8 @@ $(".list-group-city8").text(retrievedKeys[7]);
     localStorage.setItem('city', JSON.stringify(arrayOfKeys));
     console.log(arrayOfKeys);
     // console.log('');
+    
+    
 
     var lat = response.coord.lat;
     var lon = response.coord.lon;
