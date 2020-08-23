@@ -45,33 +45,8 @@ var queryUrlMulti = "https://api.openweathermap.org/data/2.5/forecast?q=" + city
  
   // var uList = $("<ul>").addClass("list-group list-group-flush");
 
-for (t = 1; t < 6; t++) {
-  
-  var uList = $("<ul>").addClass("list-group list-group-flush");
-  var lDate = $("<li>").addClass("list-group-item-date");
-  var lIcon = $("<li>").addClass("list-group-item-icon");
-  var lTemp = $("<li>").addClass("list-group-item-temp");
-  var lHum = $("<li>").addClass("list-group-item-hum");
-  // uList.text(multiDate);
-  // lDate.text("date " + m);
-  lIcon.text("icon here");
-  lTemp.text("temp");
-  lHum.text("Humidity");
-  $(".card-header").append(uList); 
-  $(uList).append(lDate); 
-  $(uList).append(lIcon);
-  $(uList).append(lTemp);
-  $(uList).append(lHum);
-}
 
-for (m = 1; m < 6; m++) {  
-  
-  var multiDate = moment().add(m, "days").format(" L "); 
-  $(".list-group-item-date").text(multiDate);
-  // $(uList).prepend(lDate);
-  // console.log(multiDate);
-  // $(".list-group-item-date").text(m);   
-}
+
 
 // $(uList).append(".card-header");
 
@@ -90,15 +65,72 @@ $.ajax({
   //   // arrayOfDays += arrayOfDays[i];
   //   console.log(Date(arrayOfDays[i].dt));
   // }
+ 
+  // for (t = 1; t < 6; t++) {
   
+  //   var uList = $("<ul>").addClass("list-group list-group-flush" + [t]);
+  //   var lDate = $("<li>").addClass("list-group-item-date" + [t]);
+  //   var lIcon = $("<li>").addClass("list-group-item-icon" + [t]);
+  //   var lTemp = $("<li>").addClass("list-group-item-temp" + [t]);
+  //   var lHum = $("<li>").addClass("list-group-item-hum" + [t]);
+  //   // uList.text(multiDate);
+  //   // lDate.text("date " + m);
+  //   lIcon.text("icon here" + [t]);
+  //   lTemp.text("temp");
+  //   lHum.text("Humidity");
+  //   $(".card-header").append(uList); 
+  //   $(uList).append(lDate); 
+  //   $(uList).append(lIcon);
+  //   $(uList).append(lTemp);
+  //   $(uList).append(lHum);
+  // }
   
-
-  // console.log(responseMulti);
-  // var i;
+  for (m = 1; m < 6; m++) {  
+    // var uListGroups = 
+    
+    // var multiDate = 
+    // $(".list-group-item-date").text(multiDate);
+    // $(uList).prepend(lDate);
+    // console.log(multiDate);
+    // $(".list-group-item-date").text(m);   
+  }
+  
   for (i = 7; i < arrayOfDays.length; i += 8) {
+  //   var iconMulti = responseMulti.weather[0].icon;
+  var iconMulti = responseMulti.list[i].weather[0].icon;
+  var iconURLMulti = "http://openweathermap.org/img/wn/" + iconMulti + ".png";
+
+  // $("#wicon").attr("src", iconURLMulti);
+  console.log(responseMulti.list[i]);
+ var x;
+  x += 1;
+  
+ 
+  var multiDate = moment().add(x, "days").format(" L "); 
+    // var groupDate = $("list-group-item-date");
     var tempMulti = ((responseMulti.list[i].main.temp - 273.15) * 1.8) + 32;
-    var humidMulti = responseMulti.list[i].main.humidity
-    var windMulti = responseMulti.list[i].wind.speed
+    var humidMulti = responseMulti.list[i].main.humidity;
+    // var windMulti = responseMulti.list[i].wind.speed;
+    var uList = $("<ul>").addClass("list-group list-group-flush" + [i]);
+    var lDate = $("<li>").addClass("list-group-item-date" + [i]);
+    var lIcon = $("<img>").addClass("list-group-item-icon" + [i]);
+    var lTemp = $("<li>").addClass("list-group-item-temp" + [i]);
+    var lHum = $("<li>").addClass("list-group-item-hum" + [i]);
+    // uList.text(multiDate);
+    lDate.text(multiDate);
+    lIcon.attr("src", iconURLMulti);
+    lTemp.text(tempMulti);
+    lHum.text(humidMulti);    
+    $(".card-header").append(uList); 
+    $(uList).append(lDate); 
+    $(uList).append(lIcon);
+    $(uList).append(lTemp);
+    $(uList).append(lHum);
+    // $(".list-group-item-date1").text(tempMulti);
+    // $(".list-group-item-date2").text(tempMulti);
+    // $(".list-group-item-date" + [i]).text(tempMulti);
+    // console.log(groupDate + [i]);
+    // lTemp.text(tempMulti);
     // console.log(responseMulti.list[i].dt_txt);
 
     // console.log(responseMulti.list[i].main.temp);
@@ -108,10 +140,15 @@ $.ajax({
     // console.log(windMulti);
 
 
+
   }
 
+  // console.log(responseMulti);
+  // var i;
+ 
 
-  //  Populates five day area
+
+  // //  Populates five day area
   //  var tempMulti = responseMulti.main.temp
   //  var tempFahMulti =  ((temp-273.15)*1.8)+32;
   //  var iconCodeMulti = responseMulti.weather[0].icon;
@@ -122,7 +159,7 @@ $.ajax({
   //   $(".card-text-wind").text("Windspeed: " + responseMulti.wind.speed);
   //   $(".card-text-hum").text("Humidity: " + responseMulti.main.humidity);
   //   console.log(tempMulti);
-  //   Code for UV-index     
+  //   // Code for UV-index     
   //   console.log(queryUrlMulti);
 });
 
