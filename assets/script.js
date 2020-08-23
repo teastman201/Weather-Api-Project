@@ -19,7 +19,7 @@ var curDay = moment().format(' L ');
      url: queryURL, 
      method: "GET"
    }).then(function (response) {
-    console.log(response);   
+    // console.log(response);   
     // Populates current day area
     var lat = response.coord.lat;
     var lon = response.coord.lon;
@@ -42,15 +42,33 @@ $.ajax({
     url: queryUrlMulti, 
     method: "GET"
   }).then(function (responseMulti) {
-   console.log(responseMulti);
-   console.log(responseMulti.city.name);
-   console.log(Date(responseMulti.list[3].dt));
+  //  console.log(responseMulti);
+  //  console.log(responseMulti.city.name);
+  //  console.log(Date(responseMulti.list[3].dt));
    var arrayOfDays = responseMulti.list;
-   console.log(arrayOfDays);
-  //  for (i=0;i < 4; i++) {
-   
+  //  console.log(arrayOfDays);
+  // var i = arrayOfDays;
+  //  for (i=0; i < 5; i++) {
+  //   // arrayOfDays += arrayOfDays[i];
+  //   console.log(Date(arrayOfDays[i].dt));
   // }
-  console.log(responseMulti.list[3]);
+  console.log(responseMulti);
+  var i;
+   for (i=7; i < arrayOfDays.length; i+=8) {
+     var temp = ((responseMulti.list[i].main.temp-273.15)*1.8)+32;
+
+    // console.log(responseMulti.list[i].dt_txt);
+    // console.log(moment().add(i, 'days').format(' L '));
+    // console.log(responseMulti.list[i].main.temp);
+    
+    console.log(temp.toFixed(2));
+    console.log(responseMulti.list[i].main.humidity);
+    console.log(responseMulti.list[i].wind.speed);
+
+    
+  }
+  
+ 
   //  Populates five day area
   //  var tempMulti = responseMulti.main.temp
   //  var tempFahMulti =  ((temp-273.15)*1.8)+32;
