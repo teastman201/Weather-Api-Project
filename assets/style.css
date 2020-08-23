@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
@@ -23,10 +23,10 @@ textarea{
 
 .description{
   white-space: pre-wrap;
-}
+} */
 
 /* Added width property for better aesthetics */
-.time-block{
+/* .time-block{
   text-align: center;
   border-radius: 15px;
   width: 10%;
@@ -57,10 +57,10 @@ textarea{
 .future {
   background-color: #77dd77;
   color: white;
-}
+} */
 
 /* Added width and height to button for better aesthetics */
-.saveBtn {
+/* .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -73,15 +73,18 @@ textarea{
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
-}
+} */
 
 /* Sets width of user input area */
-input {
+/* input {
   width: 80%;
-  height: 80px;
+  height: 80px; */
 
   /* Attempted to get the text to wrap within the input field*/
-  word-break: break-word;
+  /* word-break: break-word;
   vertical-align: top;
-}
+} */
 
+ul {
+  list-style: none
+}

@@ -8,13 +8,24 @@ var curDay = moment().format(" L ");
 //   var daysAfter = moment().add(x, "days").format(" L ");
 // // }
 
-
-var city = "New York ";
+// 
+var city = "New York "
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=742e68c932f3e4e2f733f5a8c104a762";
 //  var queryLocation = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&" + "lon=" + lon + "&exclude=hourly,daily&appid=742e68c932f3e4e2f733f5a8c104a762";
 //  console.log(queryUrlMulti);
 //   console.log(queryLocation);
 // Performing GET requests to the Open Weather API and logging the responses to the console
+
+$('button').click(function () {
+  // localStorage.setItem('9', JSON.stringify($('.input9').val()));
+  value = $("input").val(); 
+  console.log('Hello');
+  $(city).text(value);
+  console.log(city);
+});
+
+
+
 $.ajax({
   url: queryURL,
   method: "GET"
