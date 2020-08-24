@@ -1,4 +1,4 @@
-/* body {
+ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
@@ -13,17 +13,79 @@ textarea{
   padding: 10px;
 }
 
-.jumbotron {
+.header {
   text-align: center;
-  background-color: transparent;
-  color: black;
+  background-color: rgb(44, 44, 44);
+  color: white;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  padding: 5px;
+  margin-bottom: 5px;
+  /* border-bottom: 10px solid black; */
 }
 
-.description{
+.card-title-area {
+  display: inline;
+ 
+}
+
+.container {
+  display: inline;
+}
+
+.container2{
+  width: 25%;
+  /* float: right; */
+  /* display: inline; */
+}
+
+.container3{
+  width: 75%;
+  /* float: left; */
+  /* display: inline; */
+}
+
+#current-day-area {
+
+background-color: white;
+/* border: thin; */
+border-color: gray;
+border-radius: 5px;
+border-style: groove;
+width: 50%;
+
+
+}
+
+.list-city-group {
+  display: block;
+  padding: 10px;
+  background-color: white;
+  /* border-style: hidden; */
+  width: 50%;
+  text-align: left;
+  
+}
+
+.description {
   white-space: pre-wrap;
-} */
+} 
+
+.list-group {
+background-color: rgb(51, 0, 253);
+color: white;
+display: inline-block;
+padding: 10px;
+margin: 5px;
+border-radius: 5px;
+/* float: left; */
+
+}
+
+li {
+  padding: 5px;
+margin: 5px;
+
+}
 
 /* Added width property for better aesthetics */
 /* .time-block{

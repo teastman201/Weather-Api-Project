@@ -17,60 +17,64 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-  <header class="jumbotron">
+  <header class="header">
     <h1 class="display-3">Weather Dashboard</h1>
   </header>
   <div class="container">
-    <form id="city-form">
-      <label for="city-input">Search for a City</label>
-      <!-- <input type="text" id="city-input"> -->
-      <input type="text" value="" id="city-input">
-      <br>
-      <!-- This button will trigger an AJAX call -->
-      <!-- Add search icon to button and reduce width of button -->
-      <!-- <input id="find-city" type="submit" value="">  -->
-      <!-- <button  >> -->
-      <button type='button' id='find-city'></button>
-    </form>
-    
-    <ul class="list-group-city">
-      <!-- change list group class to less specific and use html element selectors for list items -->
-      <!-- <li class="list-group-city1"></li>
-      <li class="list-group-city2"></li>
-      <li class="list-group-city3"></li>
-      <li class="list-group-city4"></li>
-      <li class="list-group-city5"></li>
-      <li class="list-group-city6"></li>
-      <li class="list-group-city7"></li>
-      <li class="list-group-city8"></li> -->
-    </ul>
-
-    <div id='current-day-area' class="card">
-      <div id="title-area">
-        <h4 class="card-title-area"></h4>
-        <img id="wicon" src="" alt="Weather icon">
-      </div>
-      <div class="card-body">
-        <p class="card-text-temp"></p>
-        <p class="card-text-wind"></p>
-        <p class="card-text-hum"></p>
-        <p class="card-text-uv">UV Index:</p>
-      </div>
+    <div class="container2">
+      <form id="city-form">
+        <label for="city-input">Search for a City</label>
+        <!-- <input type="text" id="city-input"> -->
+        <input type="text" value="" id="city-input">
+        <br>
+        <!-- This button will trigger an AJAX call -->
+        <!-- Add search icon to button and reduce width of button -->
+        <!-- <input id="find-city" type="submit" value="">  -->
+        <!-- <button  >> -->
+        <button type='button' id='find-city'></button>
+      </form>
+      
+      <ul class="list-group-city">
+        <!-- change list group class to less specific and use html element selectors for list items -->
+        <!-- <li class="list-group-city1"></li>
+        <li class="list-group-city2"></li>
+        <li class="list-group-city3"></li>
+        <li class="list-group-city4"></li>
+        <li class="list-group-city5"></li>
+        <li class="list-group-city6"></li>
+        <li class="list-group-city7"></li>
+        <li class="list-group-city8"></li> -->
+      </ul>
     </div>
 
-    <div id='four-day-area' class="card">
-      <div class="card-header">
-        5-Day Forecast:
-
-      <!-- </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item-date">date</li>
-        <li class="list-group-item-icon">weather icon</li>
-        <li class="list-group-item-temp">temp:</li>
-        <li class="list-group-item-hum">humidity:</li>
-      </ul> -->
-      
-      
+    <div class="container3">
+      <div id='current-day-area' class="card">
+        <div id="title-area">
+          <h4 class="card-title-area"></h4>
+          <img id="wicon" src="" alt="Weather icon">
+        </div>
+        <div class="card-body">
+          <p class="card-text-temp"></p>
+          <p class="card-text-wind"></p>
+          <p class="card-text-hum"></p>
+          <p class="card-text-uv">UV Index:</p>
+        </div>
+      </div>
+  
+      <div id='four-day-area' class="card">
+        <div class="card-header">
+          5-Day Forecast:
+  
+        <!-- </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item-date">date</li>
+          <li class="list-group-item-icon">weather icon</li>
+          <li class="list-group-item-temp">temp:</li>
+          <li class="list-group-item-hum">humidity:</li>
+        </ul> -->
+        
+        
+      </div>
     </div>
 
 

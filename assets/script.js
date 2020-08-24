@@ -53,14 +53,16 @@ for (h = 0; h < newArrayOfKeys.length; h++) {
   // $("<ul>").addClass("list-group list-group-flush" + [i]);
 }
 
+
 // var uList = $("<ul>").addClass("list-group list-group-flush" + [i]);
 
 // newCity = ;
 
+
 //  function last(newArrayOfKeys) {
 //   return newArrayOfKeys[newArrayOfKeys.length - 1];
 // }
-var lastCity = newArrayOfKeys[newArrayOfKeys.length - 1];
+var lastCity = arrayOfKeys[arrayOfKeys.length - 1];
 
 var city = lastCity;
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=742e68c932f3e4e2f733f5a8c104a762";
@@ -80,7 +82,7 @@ $.ajax({
   var iconCode = response.weather[0].icon;
   var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
   $("#wicon").attr("src", iconURL);
-  $(".card-title-area").text('' + curDay);
+  $(".card-title-area").text(response.name + curDay);
   $(".card-text-temp").text("Temperature: " + tempFah.toFixed(0));
   $(".card-text-wind").text("Windspeed: " + response.wind.speed);
   $(".card-text-hum").text("Humidity: " + response.main.humidity);
@@ -157,15 +159,6 @@ $.ajax({
 // $(".list-group-city7").text(retrievedKeys[6]);
 // $(".list-group-city8").text(retrievedKeys[7]);
 
-if ($('.list-city1').click(function() {
-  var city  = $(".list-city1").text();
-  console.log('clicked');
-})); 
-
-if ($('.list-city2').click(function() {
-  var city  = $(".list-city2").text();
-  console.log('clicked');
-})); 
 
 // $('.list-city1').click(function () {
 //   // function(execute);
@@ -240,19 +233,75 @@ if ($('.list-city2').click(function() {
 
 // Performing GET requests to the Open Weather API and logging the responses to the console
 
-$('#find-city').click(function () {
+// if ($('.list-city1').on(execte());
+$(".list-city1").on("click", execute, myFunction1);
   
+  
+  // execute();
+
+// if ($('.list-city2').click(function() {
+//   var city  = $(".list-city2").text();
+//   console.log('clicked');
+// })); 
+
+$("#find-city").on("click", execute);
+
+function myFunction1(){
+  city = $(".list-city4").text();
+  console.log(city);
+  return city;
+}
+function myFunction2(){
+  city = $(".list-city2").text();
+  return city;
+}
+function myFunction3(){
+  city = $(".list-city3").text();
+  return city;
+}
+function myFunction4(){
+  city = $(".list-city4").text();
+  return city;
+}
+function myFunction5(){
+  city = $(".list-city5").text();
+  return city;
+}
+function myFunction6(){
+  city = $(".list-city6").text();
+  return city;
+}
+function myFunction7(){
+  city = $(".list-city7").text();
+  return city;
+}
+function myFunction8(){
+  city = $(".list-city8").text();
+  return city;
+}
+
+function myFunction9(){
+  city = $("input").val();
+  return city;
+}
+
+
+function execute() {
+  // if ($("input").val() == null){
+  //   city = 
+  // };
   var city = $("input").val();
   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=742e68c932f3e4e2f733f5a8c104a762";
   var queryUrlMulti = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=742e68c932f3e4e2f733f5a8c104a762";
-
-  city = $("input").val();
-
+// console.log(city);
+  // city = $("input").val();
+// console.log(city);
   function searchCityWeather(city) {    
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=742e68c932f3e4e2f733f5a8c104a762";    
   };
 
   city = searchCityWeather(encodeURIComponent(city));
+  console.log(city);
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -267,7 +316,7 @@ $('#find-city').click(function () {
     var iconCode = response.weather[0].icon;
     var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
     $("#wicon").attr("src", iconURL);
-    $(".card-title-area").text('' + curDay);
+    $(".card-title-area").text(response.name + curDay);
     $(".card-text-temp").text("Temperature: " + tempFah.toFixed(0));
     $(".card-text-wind").text("Windspeed: " + response.wind.speed);
     $(".card-text-hum").text("Humidity: " + response.main.humidity);
@@ -297,22 +346,17 @@ $('#find-city').click(function () {
       var tempMulti = ((responseMulti.list[i].main.temp - 273.15) * 1.8) + 32;
       var humidMulti = responseMulti.list[i].main.humidity;
 
-      var uList = $("<ul>").addClass("list-group list-group-flush" + [i]);
-      var lDate = $("<li>").addClass("list-group-item-date" + [i]);
-      var lIcon = $("<img>").addClass("list-group-item-icon" + [i]);
-      var lTemp = $("<li>").addClass("list-group-item-temp" + [i]);
-      var lHum = $("<li>").addClass("list-group-item-hum" + [i]);
+      var uList = $("<ul>").addClass("card list-group list-group-flush" + [i]);
+      var lDate = $(".list-group-item-date" + [i]);
+      var lIcon = $(".list-group-item-icon" + [i]);
+      var lTemp = $(".list-group-item-temp" + [i]);
+      var lHum = $(".list-group-item-hum" + [i]);
 
       lDate.text(multiDate);
       lIcon.attr("src", iconURLMulti);
       lTemp.text("Temp: " + tempMulti.toFixed(0));
       lHum.text("Humidty: " + humidMulti);
-      $(".card-header").append(uList);
-      $(uList).append(lDate);
-      $(uList).append(lIcon);
-      $(uList).append(lTemp);
-      $(uList).append(lHum);
-
+      
     }
 
   });
@@ -321,4 +365,4 @@ $('#find-city').click(function () {
   document.getElementById('city-input').value = "";
   
 
-});
+};
