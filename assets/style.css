@@ -14,18 +14,20 @@
   /* border-bottom: 10px solid black; */
 }
 
-/* .card-header {
-  display: inline;
-} */
+.card-header {
+  /* width: 60%; */
+  margin-right: 0;
+}
 
 .card-title-area {
-  /* display: inline; */
+  display: inline;
  
 }
 
-.container {
-  /* display: inline; */
+p {
+  padding-bottom: 10px;
 }
+
 
 /* .container2{
  margin: 0;
@@ -63,8 +65,15 @@ float: right; */
 
 
 }
+
+.separator{
+  display: inline-block;
+  /* width: 50%; */
+}
+
 .container {
-  margin: 10px;
+  margin-left: 10px;
+  margin-right: 0;
 }
 .card-text-uv1   {
   background-color: green;
@@ -87,14 +96,18 @@ float: right; */
   text-align: left;
   
 }
+
+.list-group-city{
+  padding-left: 0;
+}
 .col-sm1{
-  width: 40%;
+  width: 25%;
   height: 100%;
   float:left;
 }
 
 .col-sm2 {
-  width: 60%;
+  width: 75%;
   float: right;
   
 }
@@ -102,12 +115,16 @@ float: right; */
 .list-group {
   background-color: rgb(51, 0, 253);
   color: white;
-  /* display: inline-block; */
+  display: inline-block;
   padding: 10px;
   margin: 5px;
   border-radius: 5px;
   /* float: left; */
   
+  }
+
+  .ultraViolet{
+    float: right;
   }
   
   li {

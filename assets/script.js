@@ -65,16 +65,16 @@ $.ajax({
   }).then(function (response2) {
     
     console.log(response2.value);
-    $(".card-text-uv").text("UV Index: " + response2.value);
-    if (response2.value < 2) {
-      $(".card-text-uv").addClass("card-text-uv1");
-    } 
-    if (response2.value >= 3 ) {
-      $(".card-text-uv").addClass("card-text-uv2");
-    }
-    if (response2.value >= 6) {
-      $(".card-text-uv").addClass("card-text-uv3");
-    }
+      $(".ultraViolet").text(response2.value);
+      if (response2.value < 2) {
+        $(".ultraViolet").addClass("card-text-uv1");
+      } 
+      if (response2.value >= 3 ) {
+        $(".ultraViolet").addClass("card-text-uv2");
+      }
+      if (response2.value >= 6) {
+        $(".ultraViolet").addClass("card-text-uv3");
+      }
 
   });  
   
@@ -175,15 +175,15 @@ function doSomething() {
     }).then(function (response2) {
       
       console.log(response2.value);
-      $(".card-text-uv").text("UV Index: " + response2.value);
+      $(".ultraViolet").text(response2.value);
       if (response2.value < 2) {
-        $(".card-text-uv").addClass("card-text-uv1");
+        $(".ultraViolet").addClass("card-text-uv1");
       } 
       if (response2.value >= 3 ) {
-        $(".card-text-uv").addClass("card-text-uv2");
+        $(".ultraViolet").addClass("card-text-uv2");
       }
       if (response2.value >= 6) {
-        $(".card-text-uv").addClass("card-text-uv3");
+        $(".ultraViolet").addClass("card-text-uv3");
       }
   
     });
