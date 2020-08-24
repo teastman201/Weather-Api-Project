@@ -56,6 +56,10 @@ width: 50%;
 
 }
 
+.card-text-uv {
+  color: red;
+}
+
 .list-city-group {
   display: block;
   padding: 10px;

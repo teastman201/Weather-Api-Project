@@ -290,9 +290,11 @@ function execute() {
   // if ($("input").val() == null){
   //   city = 
   // };
+
   var city = $("input").val();
   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=742e68c932f3e4e2f733f5a8c104a762";
   var queryUrlMulti = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=742e68c932f3e4e2f733f5a8c104a762";
+  var queryUV = "api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon;
 // console.log(city);
   // city = $("input").val();
 // console.log(city);
@@ -302,6 +304,7 @@ function execute() {
 
   city = searchCityWeather(encodeURIComponent(city));
   console.log(city);
+
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -309,8 +312,8 @@ function execute() {
     arrayOfKeys.push(response.name);
     localStorage.setItem('city', JSON.stringify(arrayOfKeys));
     console.log(arrayOfKeys);
-    var lat = response.coord.lat;
-    var lon = response.coord.lon;
+    var responseLat = response.coord.lat;
+    var responseLon = response.coord.lon;
     var temp = response.main.temp
     var tempFah = ((temp - 273.15) * 1.8) + 32;
     var iconCode = response.weather[0].icon;
@@ -320,9 +323,26 @@ function execute() {
     $(".card-text-temp").text("Temperature: " + tempFah.toFixed(0));
     $(".card-text-wind").text("Windspeed: " + response.wind.speed);
     $(".card-text-hum").text("Humidity: " + response.main.humidity);
+    $(".card-text-uv").text("test " + 'test');
+    console.log($(".card-text-uv").text());
 
     // Code for UV-index     
   });
+
+  // $.ajax({
+  //   url: queryUV,
+  //   method: "GET"
+  // }).then(function (test) {    
+  //   console.log(queryUV)
+  //   lat = responseLat;
+  //   lon = responseLon;    
+  //   console.log(lat);
+  //   console.log(lon);
+    
+  
+
+  //   // Code for UV-index     
+  // });
 
 
 
