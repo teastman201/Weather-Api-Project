@@ -11,16 +11,24 @@
   border-radius: 0;
   padding: 5px;
   margin-bottom: 5px;
-  /* border-bottom: 10px solid black; */
+}
+
+#wicon{
+  margin-bottom: 10px;
 }
 
 .card-header {
-  /* width: 60%; */
+
   margin-right: 0;
 }
 
+#title-area{
+margin-top: 10px;
+}
+
 .card-title-area {
-  display: inline;
+  display: inline;  
+ margin-left: 15px;
  
 }
 
@@ -29,46 +37,48 @@ p {
 }
 
 
-/* .container2{
- margin: 0;
- width: 30%;
-} */
-
-.container3{
-  /* width: 75%; */
-  /* float: left; */
-  /* display: inline; */
+#find-city{
+  background-color: blue;
+  color: white;
 }
 
-#city-form{
-  /* width: 100%; */
-  /* display: inline-block;
-  margin: 10px;
-  padding: 10px; */
+#city-form{  
+  margin-top: 3px;
+  margin-left: 6px;
+  margin-bottom: 20px;  
 }
 
-#city-input {
-  /* padding-top: 4px;
-  margin-top: 4px; */
-}
 
 #current-day-area {
+background-color: rgb(255, 255, 255);
+border-style: thin;
+border-style: solid;
+margin-left: 10px;
+}
 
-background-color: white;
-/* display: inline; */
-/* 
-border-color: gray;
-border-radius: 5px;
-border-style: groove;
-width: 25%;
-float: right; */
+.card-body{
+  padding-left: 15px;
+}
 
+.card-text-uv {
+  padding-top: 10px;
+  border-top: 10px;
+}
 
+#five-day-area {
+  padding-top: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.card-text {
+  margin-top: 15px;
 }
 
 .separator{
-  display: inline-block;
-  /* width: 50%; */
+  
+  width: 15%;
+  
 }
 
 .container {
@@ -90,20 +100,21 @@ float: right; */
 .list-city-group {
   display: block;
   padding: 10px;
-  background-color: white;
-  
-  width: 50%;
+  background-color: white;  
+  width: 85%;
   text-align: left;
-  
+  margin-left: 5px;  
 }
 
 .list-group-city{
   padding-left: 0;
 }
+
 .col-sm1{
   width: 25%;
   height: 100%;
   float:left;
+  background-color: rgb(245, 245, 245);
 }
 
 .col-sm2 {
@@ -119,12 +130,15 @@ float: right; */
   padding: 10px;
   margin: 5px;
   border-radius: 5px;
-  /* float: left; */
   
   }
 
-  .ultraViolet{
-    float: right;
+  .ultraViolet{    
+     float: right;
+     border-radius: 5px;
+     padding: 10px;
+     margin: 0;
+     color: white;
   }
   
   li {
@@ -135,87 +149,8 @@ float: right; */
   
   ul {
     list-style: none
-    /* display: inline; */
-  }
-
-  .col-sm{
-    /* display: inline; */
     
   }
 
-  /* textarea{
-    background: transparent;
-    border: none;
-    resize: none;
-    color: #000000;
-    border-left: 1px solid black;
-    padding: 10px;
-  } */
-/* 
-.description {
-  white-space: pre-wrap;
-}  */
 
-
-
-
-/* Added width property for better aesthetics */
-/* .time-block{
-  text-align: center;
-  border-radius: 15px;
-  width: 10%;
-}
-
-.row {
-  white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;;
-}
-
-.hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
-}
-
-.past {
-  background-color: #d3d3d3;
-  color: white;
-}
-
-.present {
-  background-color: #ff6961;
-  color: white;
-}
-
-.future {
-  background-color: #77dd77;
-  color: white;
-} */
-
-/* Added width and height to button for better aesthetics */
-/* .saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06AED5;
-  color: white;
-  height: 80px;
-  width: 80px;
-}
-
-.saveBtn i:hover {
-  font-size: 20px;
-  transition: all .3s ease-in-out;
-} */
-
-/* Sets width of user input area */
-/* input {
-  width: 80%;
-  height: 80px; */
-
-  /* Attempted to get the text to wrap within the input field*/
-  /* word-break: break-word;
-  vertical-align: top;
-} */
-
+ 

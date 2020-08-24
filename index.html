@@ -25,68 +25,59 @@
     <div class="row">
       <div class="col-sm1 col-sm">
         <form id="city-form">
-        <label for="city-input">Search for a City: </label>
-        <br>
-       
-        <input type="text" value="" id="city-input">
-       
-        <!-- This button will trigger an AJAX call -->
-     
-        <button type='button' id='find-city' class=""> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-          <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-        </svg></button>
-      </form>
-      <ul class="list-group-city">
-       
-      </ul>
+          <label for="city-input">Search for a City: </label>
+          <br>
+
+          <input type="text" value="" id="city-input">
+
+          <!-- This button will trigger an AJAX call -->
+
+          <button type='button' id='find-city' class=""> <svg width="1em" height="1em" viewBox="0 0 16 16"
+              class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+              <path fill-rule="evenodd"
+                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+            </svg></button>
+        </form>
+        <ul class="list-group-city">
+
+        </ul>
       </div>
+
       <div class="col-sm2 col-sm">
+
         <div id='current-day-area' class="card">
+
           <div id="title-area">
-            <h4 class="card-title-area"></h4>
+            <h3 class="card-title-area"></h3>
             <img id="wicon" src="" alt="Weather icon">
           </div>
+
           <div class="card-body">
-            <p class="card-text-temp"></p>
-            <p class="card-text-wind"></p>
-            <p class="card-text-hum"></p>
+            <p class="card-text card-text-temp"></p>
+            <p class="card-text card-text-wind"></p>
+            <p class="card-text card-text-hum"></p>
             <div class="separator">
-            <p class="card-text-uv">UV Index: </p>
-            <p class="ultraViolet"></p>
+              <p class="ultraViolet"></p>
+              <p class="card-text-uv">UV Index: </p>
+            </div>
           </div>
-          </div>
-          <div id='four-day-area' class="card">
-            <div>5-Day Forecast:</div>
-            <div class="card-header">
-              
-     
-                   
+
+        </div>
+
+        <div id='five-day-area' class="card">
+          <h2 class="five-day">5-Day Forecast:
+          </h2>
+          <div class="card-header">
           </div>
         </div>
 
-        </div>
-        
       </div>
-      
+
     </div>
+
   </div>
-
-  <!-- <div class="containerEverything">
-    <div class="container2">
-      
-      
-      
-    </div> -->
-
-    <!-- <div class="container3"> -->
-      
-  
-      
-
-
-  <!-- </div> --> 
-
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

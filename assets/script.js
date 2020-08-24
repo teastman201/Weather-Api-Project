@@ -1,7 +1,7 @@
 var value = ""
 
 function thingThing() {
-   console.log(value)
+  console.log(value)
 }
 
 
@@ -29,8 +29,8 @@ var listCity = $('.list-city');
 
 for (h = 0; h < newArrayOfKeys.length; h++) {
 
-  listGroupCity.append(`<button type="button" class="my-button-class list-city-group list-city${h+1}">${newArrayOfKeys[h]}</button>`);
- 
+  listGroupCity.append(`<button type="button" class="my-button-class list-city-group list-city${h + 1}">${newArrayOfKeys[h]}</button>`);
+
 }
 
 
@@ -47,37 +47,38 @@ $.ajax({
   var lat = response.coord.lat;
   var lon = response.coord.lon;
   var queryUV = "https://api.openweathermap.org/data/2.5/uvi?" + "&APPID=742e68c932f3e4e2f733f5a8c104a762&lat=" + lat + "&lon=" + lon;
-  
+
   var temp = response.main.temp
   var tempFah = ((temp - 273.15) * 1.8) + 32;
   var iconCode = response.weather[0].icon;
   var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
   $("#wicon").attr("src", iconURL);
-  $(".card-title-area").text(response.name + curDay);
-  $(".card-text-temp").text("Temperature: " + tempFah.toFixed(0));
-  $(".card-text-wind").text("Windspeed: " + response.wind.speed);
-  $(".card-text-hum").text("Humidity: " + response.main.humidity);
-  
+  $(".card-title-area").text(`${response.name} ${curDay}`);
+  $(".card-text-temp").text("Temperature: " + tempFah.toFixed(2) + " °F");
+  $(".card-text-hum").text("Humidity: " + response.main.humidity + "%");
+  $(".card-text-wind").text("Windspeed: " + response.wind.speed + " MPH");
+
+
 
   $.ajax({
     url: queryUV,
     method: "GET"
   }).then(function (response2) {
-    
-    console.log(response2.value);
-      $(".ultraViolet").text(response2.value);
-      if (response2.value < 2) {
-        $(".ultraViolet").addClass("card-text-uv1");
-      } 
-      if (response2.value >= 3 ) {
-        $(".ultraViolet").addClass("card-text-uv2");
-      }
-      if (response2.value >= 6) {
-        $(".ultraViolet").addClass("card-text-uv3");
-      }
 
-  });  
-  
+    console.log(response2.value);
+    $(".ultraViolet").text(response2.value);
+    if (response2.value < 2) {
+      $(".ultraViolet").addClass("card-text-uv1");
+    }
+    if (response2.value >= 3) {
+      $(".ultraViolet").addClass("card-text-uv2");
+    }
+    if (response2.value >= 6) {
+      $(".ultraViolet").addClass("card-text-uv3");
+    }
+
+  });
+
 });
 
 var queryUrlMulti = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=742e68c932f3e4e2f733f5a8c104a762";
@@ -110,8 +111,8 @@ $.ajax({
 
     lDate.text(multiDate);
     lIcon.attr("src", iconURLMulti);
-    lTemp.text("Temp: " + tempMulti.toFixed(0));
-    lHum.text("Humidty: " + humidMulti);
+    lTemp.text("Temp: " + tempMulti.toFixed(2) + " °F");
+    lHum.text("Humidty: " + humidMulti + "%");
     $(".card-header").append(uList);
     $(uList).append(lDate);
     $(uList).append(lIcon);
@@ -123,8 +124,8 @@ $.ajax({
 });
 
 $(".list-city1").on("click", doSomething);
-  
- 
+
+
 
 
 // function myFunction1(){
@@ -142,53 +143,54 @@ $(".list-city1").on("click", doSomething);
 
 
 function doSomething() {
-  
+
   // var city = $("input").val();
   // var city = "";
   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=742e68c932f3e4e2f733f5a8c104a762";
   var queryUrlMulti = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=742e68c932f3e4e2f733f5a8c104a762";
-    
+
   $.ajax({
     url: queryURL,
     method: "GET"
-  }).then(function (response) {    
+  }).then(function (response) {
     var lat = response.coord.lat;
-  var lon = response.coord.lon;
-  var queryUV = "https://api.openweathermap.org/data/2.5/uvi?" + "&APPID=742e68c932f3e4e2f733f5a8c104a762&lat=" + lat + "&lon=" + lon;
+    var lon = response.coord.lon;
+    var queryUV = "https://api.openweathermap.org/data/2.5/uvi?" + "&APPID=742e68c932f3e4e2f733f5a8c104a762&lat=" + lat + "&lon=" + lon;
     arrayOfKeys.push(response.name);
     localStorage.setItem('city', JSON.stringify(arrayOfKeys));
     console.log(arrayOfKeys);
-    
+
     var temp = response.main.temp
     var tempFah = ((temp - 273.15) * 1.8) + 32;
     var iconCode = response.weather[0].icon;
     var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
     $("#wicon").attr("src", iconURL);
     $(".card-title-area").text(response.name + curDay);
-    $(".card-text-temp").text("Temperature: " + tempFah.toFixed(0));
-    $(".card-text-wind").text("Windspeed: " + response.wind.speed);
+    $(".card-text-temp").text("Temperature: " + tempFah.toFixed(2) + " °F");
     $(".card-text-hum").text("Humidity: " + response.main.humidity);
-    
+    $(".card-text-wind").text("Windspeed: " + response.wind.speed + " MPH");
+
+
     $.ajax({
       url: queryUV,
       method: "GET"
     }).then(function (response2) {
-      
+
       console.log(response2.value);
       $(".ultraViolet").text(response2.value);
       if (response2.value < 2) {
         $(".ultraViolet").addClass("card-text-uv1");
-      } 
-      if (response2.value >= 3 ) {
+      }
+      if (response2.value >= 3) {
         $(".ultraViolet").addClass("card-text-uv2");
       }
       if (response2.value >= 6) {
         $(".ultraViolet").addClass("card-text-uv3");
       }
-  
+
     });
-    
-    
+
+
   });
 
   $.ajax({
@@ -219,18 +221,18 @@ function doSomething() {
 
       lDate.text(multiDate);
       lIcon.attr("src", iconURLMulti);
-      lTemp.text("Temp: " + tempMulti.toFixed(0));
-      lHum.text("Humidty: " + humidMulti);
-      
+      lTemp.text("Temp: " + tempMulti.toFixed(2) + " °F");
+      lHum.text("Humidty: " + humidMulti + "%");
+
     }
 
   });
-  
+
   document.getElementById('city-input').value = "";
-  
+
 };
 
-$(document).on("click" , ".my-button-class", function () {
+$(document).on("click", ".my-button-class", function () {
   city = $(this).text()
 
   doSomething();
@@ -238,7 +240,7 @@ $(document).on("click" , ".my-button-class", function () {
 })
 
 
-$(document).on("click" , "#find-city", function () {
+$(document).on("click", "#find-city", function () {
   city = $("input").val();
 
   doSomething();
