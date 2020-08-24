@@ -20,70 +20,68 @@
   <header class="header">
     <h1 class="display-3">Weather Dashboard</h1>
   </header>
+
   <div class="container">
-    <div class="container2">
-      <form id="city-form">
-        <label for="city-input">Search for a City</label>
-        <!-- <input type="text" id="city-input"> -->
-        <input type="text" value="" id="city-input">
+    <div class="row">
+      <div class="col-sm1 col-sm">
+        <form id="city-form">
+        <label for="city-input">Search for a City: </label>
         <br>
+       
+        <input type="text" value="" id="city-input">
+       
         <!-- This button will trigger an AJAX call -->
-        <!-- Add search icon to button and reduce width of button -->
-        <!-- <input id="find-city" type="submit" value="">  -->
-        <!-- <button  >> -->
-        <!-- </button> -->
+     
         <button type='button' id='find-city' class=""> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
           <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
         </svg></button>
       </form>
-      
       <ul class="list-group-city">
-        <!-- change list group class to less specific and use html element selectors for list items -->
-        <!-- <li class="list-group-city1"></li>
-        <li class="list-group-city2"></li>
-        <li class="list-group-city3"></li>
-        <li class="list-group-city4"></li>
-        <li class="list-group-city5"></li>
-        <li class="list-group-city6"></li>
-        <li class="list-group-city7"></li>
-        <li class="list-group-city8"></li> -->
+       
       </ul>
-    </div>
-
-    <div class="container3">
-      <div id='current-day-area' class="card">
-        <div id="title-area">
-          <h4 class="card-title-area"></h4>
-          <img id="wicon" src="" alt="Weather icon">
-        </div>
-        <div class="card-body">
-          <p class="card-text-temp"></p>
-          <p class="card-text-wind"></p>
-          <p class="card-text-hum"></p>
-          <p class="card-text-uv"></p>
-        </div>
       </div>
-  
-      <div id='four-day-area' class="card">
-        <div class="card-header">
-          5-Day Forecast:
-  
-        <!-- </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item-date">date</li>
-          <li class="list-group-item-icon">weather icon</li>
-          <li class="list-group-item-temp">temp:</li>
-          <li class="list-group-item-hum">humidity:</li>
-        </ul> -->
-        
+      <div class="col-sm2 col-sm">
+        <div id='current-day-area' class="card">
+          <div id="title-area">
+            <h4 class="card-title-area"></h4>
+            <img id="wicon" src="" alt="Weather icon">
+          </div>
+          <div class="card-body">
+            <p class="card-text-temp"></p>
+            <p class="card-text-wind"></p>
+            <p class="card-text-hum"></p>
+            <p class="card-text-uv"></p>
+          </div>
+          <div id='four-day-area' class="card">
+            <div class="card-header">
+              5-Day Forecast:
+     
+                   
+          </div>
+        </div>
+
+        </div>
         
       </div>
+      
     </div>
-
-
   </div>
 
+  <!-- <div class="containerEverything">
+    <div class="container2">
+      
+      
+      
+    </div> -->
+
+    <!-- <div class="container3"> -->
+      
+  
+      
+
+
+  <!-- </div> --> 
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
