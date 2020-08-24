@@ -14,6 +14,10 @@
   /* border-bottom: 10px solid black; */
 }
 
+/* .card-header {
+  display: inline;
+} */
+
 .card-title-area {
   /* display: inline; */
  
@@ -49,6 +53,7 @@
 #current-day-area {
 
 background-color: white;
+/* display: inline; */
 /* 
 border-color: gray;
 border-radius: 5px;
@@ -74,7 +79,7 @@ float: right; */
 }
 
 .list-city-group {
-  /* display: block; */
+  display: block;
   padding: 10px;
   background-color: white;
   
@@ -82,9 +87,16 @@ float: right; */
   text-align: left;
   
 }
+.col-sm1{
+  width: 40%;
+  height: 100%;
+  float:left;
+}
 
-.col-sm-2 {
-  float: left;
+.col-sm2 {
+  width: 60%;
+  float: right;
+  
 }
 
 .list-group {
@@ -106,6 +118,7 @@ float: right; */
   
   ul {
     list-style: none
+    /* display: inline; */
   }
 
   .col-sm{
