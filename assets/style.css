@@ -4,15 +4,6 @@
   line-height: 1;
 }
 
-textarea{
-  background: transparent;
-  border: none;
-  resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
-}
-
 .header {
   text-align: center;
   background-color: rgb(44, 44, 44);
@@ -24,12 +15,12 @@ textarea{
 }
 
 .card-title-area {
-  display: inline;
+  /* display: inline; */
  
 }
 
 .container {
-  display: inline;
+  /* display: inline; */
 }
 
 .container2{
@@ -84,26 +75,42 @@ width: 50%;
   
 }
 
+.list-group {
+  background-color: rgb(51, 0, 253);
+  color: white;
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  /* float: left; */
+  
+  }
+  
+  li {
+    padding: 5px;
+  margin: 5px;
+  
+  }
+  
+  ul {
+    list-style: none
+  }
+
+  /* textarea{
+    background: transparent;
+    border: none;
+    resize: none;
+    color: #000000;
+    border-left: 1px solid black;
+    padding: 10px;
+  } */
+/* 
 .description {
   white-space: pre-wrap;
-} 
+}  */
 
-.list-group {
-background-color: rgb(51, 0, 253);
-color: white;
-display: inline-block;
-padding: 10px;
-margin: 5px;
-border-radius: 5px;
-/* float: left; */
 
-}
 
-li {
-  padding: 5px;
-margin: 5px;
-
-}
 
 /* Added width property for better aesthetics */
 /* .time-block{
@@ -165,6 +172,3 @@ margin: 5px;
   vertical-align: top;
 } */
 
-ul {
-  list-style: none
-}
