@@ -33,15 +33,21 @@ textarea{
 }
 
 .container2{
-  width: 25%;
+  /* width: 25%; */
   /* float: right; */
   /* display: inline; */
 }
 
 .container3{
-  width: 75%;
+  /* width: 75%; */
   /* float: left; */
   /* display: inline; */
+}
+
+#city-form{
+  /* width: 100%; */
+  display: inline-block;
+  
 }
 
 #current-day-area {
@@ -56,8 +62,16 @@ width: 50%;
 
 }
 
-.card-text-uv {
-  color: red;
+.card-text-uv1   {
+  background-color: green;
+}
+
+.card-text-uv2  {
+  background-color: yellow;
+}
+
+.card-text-uv3  {
+  background-color: red;
 }
 
 .list-city-group {
