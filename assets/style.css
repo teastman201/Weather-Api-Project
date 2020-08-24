@@ -18,18 +18,16 @@
 }
 
 .card-header {
-
   margin-right: 0;
 }
 
 #title-area{
-margin-top: 10px;
+  margin-top: 10px; 
 }
 
 .card-title-area {
   display: inline;  
- margin-left: 15px;
- 
+  margin-left: 15px; 
 }
 
 p {
@@ -50,10 +48,10 @@ p {
 
 
 #current-day-area {
-background-color: rgb(255, 255, 255);
-border-style: thin;
-border-style: solid;
-margin-left: 10px;
+  background-color: rgb(255, 255, 255);
+  border-style: thin;
+  border-style: solid;
+  margin-left: 10px;
 }
 
 .card-body{
@@ -62,7 +60,7 @@ margin-left: 10px;
 
 .card-text-uv {
   padding-top: 10px;
-  border-top: 10px;
+  border-top: 10px;  
 }
 
 #five-day-area {
@@ -75,10 +73,8 @@ margin-left: 10px;
   margin-top: 15px;
 }
 
-.separator{
-  
-  width: 15%;
-  
+.separator{  
+  width: 17%;  
 }
 
 .container {
@@ -133,24 +129,23 @@ margin-left: 10px;
   
   }
 
-  .ultraViolet{    
-     float: right;
-     border-radius: 5px;
-     padding: 10px;
-     margin: 0;
-     color: white;
-  }
+.ultraViolet{    
+    float: right;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0;
+    color: white;
+}
   
-  li {
-    padding: 5px;
+li {
+  padding: 5px;
   margin: 5px;
-  
-  }
-  
-  ul {
-    list-style: none
-    
-  }
+
+}
+
+ul {
+  list-style: none;  
+}
 
 
  
