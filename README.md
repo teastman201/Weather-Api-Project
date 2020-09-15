@@ -11,6 +11,7 @@
 * [User-Story](#user-story)
 * [Screenshots](#screenshots)
 * [Link to Deployed Website](#Link-to-Deployed-Website)
+* [Technologies Used](#Technologies-Used)
 
 ## Description
 #### WAP can help individuals see weather outlook for multiple cities and help them plan their trips accordingly. 
