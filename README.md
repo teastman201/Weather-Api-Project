@@ -9,7 +9,7 @@
 ## Table of Contents
 * [Description](#description)
 * [User-Story](#user-story)
-* [Screenshot](#screenshot)
+* [Screenshots](#screenshots)
 * [Link to Deployed Website](#Link-to-Deployed-Website)
 
 ## Description
@@ -27,11 +27,9 @@
 #### I WANT to review the weather at potential locations.
 #### SO THAT I make the safest decision as to where my travels take me.
 
-## GIF 
-![gif](https://media.giphy.com/media/Tirn3WUeG0dliJiWv4/giphy.gif)
-
-## Screenshot
+## Screenshots
 ![weather-api-project-demo](./assets/weather-api-project.png)
+![gif](https://media.giphy.com/media/Tirn3WUeG0dliJiWv4/giphy.gif)
 
 ## Link to Deployed Website
 #### https://teastman201.github.io/Weather-Api-Project/
