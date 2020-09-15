@@ -42,12 +42,13 @@ $.ajax({
   var lat = weatherResponse.coord.lat;
   var lon = weatherResponse.coord.lon;
   var queryUV = "https://api.openweathermap.org/data/2.5/uvi?" + "&APPID=742e68c932f3e4e2f733f5a8c104a762&lat=" + lat + "&lon=" + lon;
-
+  
+  
   // Sets API response data to a variable
   var weatherTemp = weatherResponse.main.temp;
   var tempFah = ((weatherTemp - 273.15) * 1.8) + 32;
   var weatherIconCode = weatherResponse.weather[0].icon;
-  var weatherIconURL = "http://openweathermap.org/img/wn/" + weatherIconCode + ".png";
+  var weatherIconURL = "https://openweathermap.org/img/wn/" + weatherIconCode + ".png";
 
   // Updates element properties with API response data stored in variables
   $("#wicon").attr("src", weatherIconURL);
@@ -74,6 +75,21 @@ $.ajax({
     if (uvResponse.value >= 6) {
       $(".ultraViolet").addClass("card-text-uv3");
     }
+   
+
+  });
+
+  var queryGeo = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=742e68c932f3e4e2f733f5a8c104a762"; 
+
+  // Ajax call on weather API for current geolocation data
+  $.ajax({
+    url: queryGeo,
+    method: "GET"
+  }).then(function (geoResponse) {
+
+    // returns geo location lat + lon
+    // console.log(geoResponse);
+   
 
   });
 
@@ -96,7 +112,7 @@ $.ajax({
   for (i = 7; i < arrayOfDays.length; i += 8) {
 
     var forecastIcon = forecastResponse.list[i].weather[0].icon;
-    var forecastIconURL = "http://openweathermap.org/img/wn/" + forecastIcon + ".png";
+    var forecastIconURL = "https://openweathermap.org/img/wn/" + forecastIcon + ".png";
     x += 1;
     var forecastDates = moment().add(x, "days").format(" L ");
 
@@ -148,7 +164,7 @@ function getWeather() {
     var weatherTemp = weatherReponse.main.temp
     var tempFah = ((weatherTemp - 273.15) * 1.8) + 32;
     var weatherIconCode = weatherReponse.weather[0].icon;
-    var weatherIconURL = "http://openweathermap.org/img/wn/" + weatherIconCode + ".png";
+    var weatherIconURL = "https://openweathermap.org/img/wn/" + weatherIconCode + ".png";
     $("#wicon").attr("src", weatherIconURL);
     $(".card-title-area").text(weatherReponse.name + curDay);
     $(".card-text-temp").text("Temperature: " + tempFah.toFixed(2) + " °F");
@@ -190,7 +206,7 @@ function getWeather() {
     for (i = 7; i < arrayOfDays.length; i += 8) {
 
       var forecastIcon = forecastResponse.list[i].weather[0].icon;
-      var forecastIconURL = "http://openweathermap.org/img/wn/" + forecastIcon + ".png";
+      var forecastIconURL = "https://openweathermap.org/img/wn/" + forecastIcon + ".png";
       x += 1;
       var forecastDates = moment().add(x, "days").format(" L ");
 
@@ -229,3 +245,20 @@ $(document).on("click", "#find-city", function () {
   city = $("input").val();
   getWeather();
 })
+
+// var x = document.getElementById("current-day-area-area");
+
+// function getLocation() {
+//   if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(showPosition);
+//   } else { 
+//     x.innerHTML = "Geolocation is not supported by this browser.";
+//   }
+// }
+
+// function showPosition(position) {
+//   x.innerHTML = "Latitude: " + position.coords.latitude + 
+//   "<br>Longitude: " + position.coords.longitude;
+// }
+
+// console.log(showPosition());
