@@ -9,7 +9,7 @@
 ## Table of Contents
 * [Description](#description)
 * [User-Story](#user-story)
-* [Screenshots](#screenshots)
+* [Screenshots](#screenshot)
 * [Link to Deployed Website](#Link-to-Deployed-Website)
 
 ## Description
